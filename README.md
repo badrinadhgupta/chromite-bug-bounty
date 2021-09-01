@@ -21,4 +21,4 @@ Questions todo:
 Ans: The two variants of instruction formats B and J are used to  reduce the hardware cost of the simplest implementations. In all immediates, sign bit is always held at the 32st bit position. Since more complex implementations might have separate adders for branch and jump calculations and so would not benefit from keeping the location of immediate bits constant across types of instruction, By rotating bits in the instruction encoding of B and J immediates instead of using dynamic hardware muxes to multiply the immediate by 2, we reduce instruction signal fanout and immediate mux costs by around a factor of 2.
 
 ## Within the 32-bit instruction format, how many more instructions can you add?
-Ans: Within 32 bit instruction format, we can add custom instructions can be added in opcode labeled custom, and we can add 2^4 instructions. Hence, we can 16 more instructions.
+Ans: Within 32 bit instruction format, we can add custom instructions in opcode labeled custom-0/1, and we can add 2^4 instructions i.e. 16 more instructions.
