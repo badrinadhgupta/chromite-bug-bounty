@@ -22,7 +22,7 @@ class uatg_csrbox_test1(IPlugin):
         for j in range(0, len(csr)):
           for i in range(0,200):
             x = random.randrange(0,2**32)
-            asm += f'\tli x3, {hex(x)}\n\tcsrrc x4, {csr[j]}, x3\n\tbeq x4, {csr[j]}, trap\n'
+            asm += f'\tli x3, {hex(x)}\n\tcsrrc x4, {csr[j]}, x3\n\tbeq x3, {csr[j]}, trap\n'
         asm += 'trap:\n\taddi x31, x31, 1\n'
 
         compile_macros = []
