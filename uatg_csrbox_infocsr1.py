@@ -20,10 +20,9 @@ class uatg_csrbox_test1(IPlugin):
         csr = ['mvendorid', 'mempid', 'marchid', 'mhartid'] 
         asm = '\tli x4, 0xffffffff\n'
         for j in range(0, len(csr)):
-          asm += f'\tli x3, 0x3020\n\tcsrrw x4, {csr[j]}, x3\n\tbeq x4, {csr[j]}, trap\n'
           for i in range(0,200):
             x = random.randrange(0,2**32)
-            asm += f'\tli x3, {hex(x)}\n\tcsrrw x4, {csr[j]}, x3\n\tbeq x4, {csr[j]}, trap\n'
+            asm += f'\tli x3, {hex(x)}\n\tcsrrw x4, {csr[j]}, x3\n\tbeq x3, {csr[j]}, trap\n'
         asm += 'trap:\n\taddi x31, x31, 1\n'
 
         compile_macros = []
