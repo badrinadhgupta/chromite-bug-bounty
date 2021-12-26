@@ -63,7 +63,7 @@ into 3 major categories based on the privilege modes supported: Machine, Supervi
 - 
 #### uatg_csrbox_misarv.py
 - the reset value of `misarv` is extracted from the isa_yaml file and is assigned to x4 register.
-- `misa` value is copied to x5 register.
+- `misarv` value is copied to x5 register.
 - later the high bits of x5 are cleared in misa making it zero so we assign it to x0.
 - then the register x4 and misa are compared and trap is raised if they are not equal.
 - the trap is stored in the x31 register. 
