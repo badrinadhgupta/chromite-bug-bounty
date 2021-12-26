@@ -9,16 +9,13 @@ into 3 major categories based on the privilege modes supported: Machine, Supervi
 ```
 .
 ├── README.md -- Describes the idea behind each test and how the ASM is generated efficiently using Python 3.
-├── uatg_CSRBOX_test01.py -- Generates ASM to 
-├── uatg_CSRBOX_test02.py -- Generates ASM to 
-├── uatg_CSRBOX_test03.py -- Generates ASM to 
-├── uatg_CSRBOX_test04.py -- Generates ASM to 
-├── uatg_CSRBOX_test05.py -- Generates ASM to 
+├── uatg_csrbox_infocsr1.py -- Generates ASM to 
+├── uatg_csrbox_infocsr1.py -- Generates ASM to 
+├── uatg_csrbox_infocsr1.py -- Generates ASM to 
+├── uatg_csrbox_minstret.py -- Generates ASM to 
+├── uatg_csrbox_misam.py -- Generates ASM to 
+├── uatg_csrbox_misarv.py -- Generates ASM to 
 ```
-
-## Test Description
-- 
-
 
 ## Code Description
 
