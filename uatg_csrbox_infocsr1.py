@@ -6,7 +6,7 @@ from random import randint
 import random
 
 
-class uatg_csrbox_test1(IPlugin):
+class uatg_csrbox_infocsr1(IPlugin):
 
     def __init__(self) -> None:
         super().__init__()
