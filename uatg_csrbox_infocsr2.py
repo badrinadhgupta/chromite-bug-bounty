@@ -22,9 +22,9 @@ class uatg_csrbox_infocsr2(IPlugin):
         for j in range(0, len(csr)):
           for i in range(0,200):
             x = random.randrange(0,2**32)
-            asm += f'\tli x3, {hex(x)}\n\tcsrr x2, {csr[j]}\n\tcsrrs x4, {csr[j]}, x3\n\tbnq x2, {csr[j]}, trap\n'
-	    asm += f'\tcsrrsi x4, {csr[j]}, {hex(x)}\n\tbnq x2, {csr[j]}, trap\n'
-        asm += 'trap:\n\taddi x31, x31, 1\n'
+            asm += f'\tli x3, {hex(x)}\n\tcsrr x2, {csr[j]}\n\tcsrrs x4, {csr[j]}, x3\n\tbne x2, {csr[j]}, trap\n'
+	    asm += f'\tcsrrsi x4, {csr[j]}, {hex(x)}\n\tbne x2, {csr[j]}, trap\n'
+        asm += 'trap:\n\taddi x31, x3, 0\n'
 
         compile_macros = []
 
