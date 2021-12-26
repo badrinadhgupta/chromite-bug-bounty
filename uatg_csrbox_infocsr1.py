@@ -24,7 +24,7 @@ class uatg_csrbox_infocsr1(IPlugin):
             x = random.randrange(0,2**32)
             asm += f'\tli x3, {hex(x)}\n\tcsrrw x4, {csr[j]}, x3\n\tbeq x3, {csr[j]}, trap\n'
 	    asm += f'\tcsrrwi x4, {csr[j]}, {hex(x)}\n\tbeq x3, {csr[j]}, trap\n'
-        asm += 'trap:\n\taddi x31, x31, 1\n'
+        asm += 'trap:\n\taddi x31, x3, 0\n'
 
         compile_macros = []
 
