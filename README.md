@@ -25,9 +25,13 @@ into 3 major categories based on the privilege modes supported: Machine, Supervi
 - 
 #### CSRBOX_test03.py
 -
-#### CSRBOX_test04.py
-- 
-#### CSRBOX_test05.py
+#### uatg_csrbox_minstret.py
+- first the value of 'minstret' is transfered to register x1.
+- then later we perform n sample operations.
+- then later minstret register is checked if it is incremented by n if not trap is raised.
+- the address of this trap is copied to x31 register.
+
+#### uatg_csrbox_misarv.py
 - 
 
 
