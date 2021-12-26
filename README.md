@@ -20,37 +20,17 @@ into 3 major categories based on the privilege modes supported: Machine, Supervi
 ## Code Description
 
 #### CSRBOX_test01.py
-- Perform a `fence` operation to clear out the data cache subsystem and the fill buffer. 
-- Load some data into a temporary register and perform `numerous store operations` to fill up the cache.
-- Each loop in ASM has an unconditional `jump` back to that label, a branch takes us out of the loop.
-- Each iteration, we visit the next `set`.
-- The total number of iterations is parameterized based on YAML input.
+- 
 #### CSRBOX_test02.py
-- Perform a `fence` operation to clear out the data cache subsystem and the fill buffer. 
-- In each iteration, we visit the next way in the same set. Once all the ways in a set are touched, we visit the next set.
-- The total number of iterations is parameterized based on YAML input.
+- 
 #### CSRBOX_test03.py
-- Perform a `fence` operation to clear out the data cache subsystem and the fill buffer. 
-- Perform `numerous load operations` to fill up the cache
-- In each iteration, we visit the next way in the same set. Once all the ways in a set are touched, we visit the next set.
-- The total number of iterations is parameterized based on YAML input.
+-
 #### CSRBOX_test04.py
-- Perform a `fence` operation to clear out the data cache subsystem and the fill buffer. 
-- Load some data into a temporary register and perform `numerous load operations` to fill up the cache.
-- Each loop in ASM has an unconditional `jump` back to that label, a branch takes us out of the loop.
-- Each iteration, we visit the next `set`.
-- The total number of iterations is parameterized based on YAML input.
+- 
 #### CSRBOX_test05.py
-- Perform a `fence` operation to clear out the data cache subsystem and the fill buffer.
-- Load some data into a temporary register and perform `numerous store operations` to fill up the cache.
-- Each loop in ASM has an unconditional `jump` back to that label, a branch takes us out of the loop.
-- Each iteration, we visit the next `set`.
-- The total number of iterations is parameterized based on YAML input.
-- Once the cache is full, we perform numerous `consecutive store operations`.
-- The number of iterations is parameterized based on the YAML input such that the fill_buffer is completely full.
-- Post filling the caches, we perform a series of `nop` instructions to ensure that the fill buffer is empty.
+- 
 
 
 ## Contributors
-Badrinath Gupta << >>,
+Badrinath Gupta <<nerella.rabasa@gmail.com>>,
 B A Manish Kumar <<manishk.2210.2000@gmail.com>>
