@@ -24,7 +24,7 @@ class uatg_csrbox_minstret(IPlugin):
           asm += '\taddi x1, minstret, 0\n'
           for j in range(x):
             asm += '\taddi x2, x2, 1\n'
-          asm += '\taddi x1, x1, n\n'
+          asm += f'\taddi x1, x1, {hex(x)}\n'
           asm += '\tbne x1, minstret, trap\n'
         asm += 'trap:\n\taddi x31, x1,0\n'
 
