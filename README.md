@@ -26,7 +26,7 @@ into 3 major categories based on the privilege modes supported: Machine, Supervi
 - the below steps occurs in a loop for all the given registers.
 - then a random number is generated and assigned to x.
 - then csr value is copied to x4 and x3 value is copied to csr using `csrrw`.
-- later csr and x3 are checked, trap  is raised if they are equal.
+- later csr and x4 are checked, trap  is raised if they are equal.
 - the trap address is stored in x31 register.
 
 #### uatg_csrbox_infocsr2.py
@@ -35,8 +35,8 @@ into 3 major categories based on the privilege modes supported: Machine, Supervi
 - firstly x4 is set to 1s.
 - the below steps occurs in a loop for all the given registers.
 - then a random number is generated and assigned to x.
-- then csr value is copied to x4 and x3 value is copied to csr using `csrrw`.
-- later csr and x3 are checked, trap  is raised if they are equal.
+- then csr value is copied to x4 and the high bits in x3 are also set high in csr using `csrrs`..
+- later csr and x3 are checked, trap  is raised if there is a change in value of csr from the initial value.
 - the trap address is stored in x31 register. 
 
 #### uatg_csrbox_infocsr3.py
@@ -45,8 +45,8 @@ into 3 major categories based on the privilege modes supported: Machine, Supervi
 - firstly x4 is set to 1s.
 - the below steps occurs in a loop for all the given registers.
 - then a random number is generated and assigned to x.
-- then csr value is copied to x4 and the high bits in x3 are also set high in csr using `csrrs`.
-- later csr and x3 are checked, trap  is raised if they are equal.
+- then csr value is copied to x4 and the high bits in x3 are cleared in csr using `csrrc`.
+- later csr and x3 are checked, trap  is raised if there is a change in value of csr from the initial value.
 - the trap address is stored in x31 register. 
 
 #### uatg_csrbox_minstret.py
